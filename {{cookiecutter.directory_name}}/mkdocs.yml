@@ -1,0 +1,33 @@
+site_name: "{{cookiecutter.directory_name}}"
+nav:
+  - Getting started: index.md
+  - Code Reference: reference/
+  - About: about.md
+
+theme:
+  name: 'material'
+  palette:
+    scheme: slate
+    accent: blue
+    primary: indigo
+  logo: 'img/machine-learning.png'
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - toc.integrate
+    - content.code.copy
+
+plugins:
+  - search
+  - gen-files:
+      scripts:
+        - docs/gen_ref_pages.py
+  - literate-nav:
+      nav_file: SUMMARY.md
+  - section-index
+  - mkdocstrings
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences 

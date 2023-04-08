@@ -22,11 +22,7 @@ test:
 
 docs_view:
 	@echo View API documentation... 
-	PYTHONPATH=src pdoc src --http localhost:8080
-
-docs_save:
-	@echo Save documentation to docs... 
-	PYTHONPATH=src pdoc src -o docs
+	PYTHONPATH=src mkdocs serve
 
 data/processed/xy.pkl: data/raw src/process.py
 	@echo "Processing data..."
